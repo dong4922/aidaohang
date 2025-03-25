@@ -1,0 +1,117 @@
+/* Custom styles for Monster Survivors Game Website */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Game container hover effect */
+.game-container:hover {
+    box-shadow: 0 0 20px rgba(88, 86, 214, 0.5); /* apple-indigo shadow */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Custom link underline animation */
+.animated-link {
+    position: relative;
+}
+
+.animated-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #FFCC00; /* apple-yellow */
+    transition: width 0.3s ease;
+}
+
+.animated-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .game-container {
+        height: 70vh;
+        min-height: 300px;
+    }
+    
+    .h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-content {
+        padding: 1rem;
+    }
+}
+
+/* Enhance accessibility */
+:focus {
+    outline: 3px solid #007AFF; /* apple-blue */
+    outline-offset: 3px;
+}
+
+/* Print styles */
+@media print {
+    .game-container,
+    .header,
+    .footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        color: black;
+        background: white;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    p, li {
+        page-break-inside: avoid;
+    }
+}
+
+/* Performance improvements */
+img, iframe {
+    will-change: transform;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F2F2F7; /* apple-bg */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8E8E93; /* apple-gray */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5856D6; /* apple-indigo */
+} 
